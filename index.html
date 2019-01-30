@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div class="container">
+            <button id = "rock">rock</button>
+            <button id = "paper">paper</button>
+            <button id = "scissors">scissors</button> 
+        </div>
+
+
+
+        <script> 
+            
+            //Computer Play
+            let computerPlay = function (){
+                let arr=["Rock", "Paper", "Scissors"];
+                return arr[Math.floor(Math.random()*arr.length)]
+            }
+           
+           //PlayerSelection
+            let playerSelection;
+
+
+            
+            let playRound = function (playerSelection, computerPlay){
+                
+                if (playerSelection === "rock"){
+                    if( computerPlay === "Paper"){
+                        return "you lose! Paper wins Rock."
+                        
+                    }
+                    else if( computerPlay === 'Scissors'){
+                        return 'You win! Rock beats scissors'
+                        
+                    } 
+
+                    else if ( computerPlay === "Rock") {
+                        return "Rock-Rock, no one wins for this round"
+                       
+                    }
+                }
+                else if (playerSelection === "paper"){
+                    if( computerPlay === "Paper"){
+                    return  "Paper-Paper no one wins!"
+                    
+                    }
+                    else if( computerPlay === 'Scissors'){
+                    return "You lose! Scissors beats paper"
+                    
+                    } 
+
+                    else if ( computerPlay === "Rock") {
+                    return "You win!"
+                    
+                    }
+                }
+                else if (playerSelection === 'scissors'){
+                    if( computerPlay === "Paper"){
+                    return "you win!"
+                    
+                    }
+                    else if( computerPlay === 'Scissors'){
+                    return "No winner for this round!"
+                    
+                    } 
+                    else if ( computerPlay === "Rock") {
+                    return "You lose!"
+                    
+                    }
+                }
+                
+            
+            }
+
+            let div = document.querySelector(".container");
+            div.setAttribute('style', 'display:flex; justify-content: space-around; border: 5px solid black;')
+            
+            let rock = document.querySelector('#rock');
+             rock.addEventListener("click", () =>{ 
+                console.log(playRound("rock", computerPlay()));
+            })
+
+            let paper = document.querySelector('#paper');
+            paper.addEventListener("click", () => {
+               
+                console.log(playRound("paper", computerPlay()))
+            });
+
+            let scissors = document.querySelector('#scissors');
+            scissors.addEventListener('click', () => {
+                console.log(playRound("scissors", computerPlay()));
+            })
+           
+           
+        </script>
+    </body>
+</html>

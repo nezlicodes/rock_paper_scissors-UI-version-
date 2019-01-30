@@ -1,0 +1,1 @@
+UI version of the "rock, paper,scissors"
