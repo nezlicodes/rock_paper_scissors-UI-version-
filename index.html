@@ -1,18 +1,24 @@
 <!DOCTYPE html>
 <html>
-    <head></head>
+    <head>
+        <link href="https://fonts.googleapis.com/css?family=Srisakdi" rel="stylesheet"> 
+    </head>
     <body>
         <h1>Rock paper scissors</h1>
         <div class="container">
-            <input id= "paper" type="image" src="Capture.PNG" />
-            <input id = "rock" type="image" src= "Rock.PNG" />
-            <input id = "scissors" type ="image" src="Scissors.PNG " />
+            <input id= "paper" type="image" src="rock.png" />
+            <input id = "rock" type="image" src= "images.png" />
+            <input id = "scissors" type ="image" src="Scissor.PNG " />
         </div>
 
 
 
         <script> 
             
+            let body = document.querySelector("body");
+            body.setAttribute("css", "font-family: 'Srisakdi', cursive; ")
+
+
             //Computer Play
             let computerPlay = function (){
                 let arr=["Rock", "Paper", "Scissors"];
@@ -28,7 +34,7 @@
                 
                 if (playerSelection === "rock"){
                     if( computerPlay === "Paper"){
-                        return "you lose! Paper wins Rock."
+                        return "You lose! Paper wins Rock."
                         
                     }
                     else if( computerPlay === 'Scissors'){
@@ -58,7 +64,7 @@
                 }
                 else if (playerSelection === 'scissors'){
                     if( computerPlay === "Paper"){
-                    return "you win!"
+                    return "You win!"
                     
                     }
                     else if( computerPlay === 'Scissors'){
@@ -76,15 +82,15 @@
 
             
             let div = document.querySelector(".container");
-            div.setAttribute('style', 'display:grid; grid-template-columns: repeat(3, 1fr); align-items:center')
+            div.setAttribute('style', 'display:grid; grid-template-columns: repeat(3, 1fr); align-items:center; padding: 3em 3em 3em 3em;margin: 3em 3em 3em 3em;')
 
             let h1 = document.querySelector("h1");
             h1.setAttribute("style", "display:flex; align-content: center; justify-content:center;")
             
             let computerGame = document.createElement("div");
-            computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; font-size: 25px')
+            computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; font-size: 25px;top:3em; position:relative; padding:2em 2em 2em 2em;')
             div.appendChild(computerGame);
-
+            
 
             let rock = document.querySelector('#rock');
              rock.addEventListener("click", () =>{ 
@@ -92,13 +98,13 @@
                 computerGame.textContent = playRound("rock", computerSelection);
                 if ( computerSelection === "Rock"){
                 
-                computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black;')
+                computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black;top:3em;position:relative; padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Scissors"){
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green; top:3em; position:relative; padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Paper") {
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red; top:3em;  position:relative; padding:2em 2em 2em 2em;')
                 }
             })
 
@@ -108,13 +114,13 @@
                 computerGame.textContent = playRound("paper", computerSelection);
                 if ( computerSelection === "Rock"){
                 
-                computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green;')
+                computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green; top:3em;position:relative;padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Scissors"){
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red; top:3em; position:relative;padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Paper") {
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black; top:3em; position:relative;padding:2em 2em 2em 2em;')
                 }
                
             });
@@ -125,13 +131,13 @@
                 computerGame.textContent = playRound("scissors", computerSelection);
                 if ( computerSelection === "Rock"){
                 
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :red; top:3em; position:relative; padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Scissors"){
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :black; top:3em; position:relative; padding:2em 2em 2em 2em;')
                 }
                 else if (computerSelection === "Paper") {
-                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green;')
+                    computerGame.setAttribute('style', 'border: 2px solid black; grid-column: 2/3; color :green; top:3em; position:relative; padding:2em 2em 2em 2em;')
                 }
             })
            
